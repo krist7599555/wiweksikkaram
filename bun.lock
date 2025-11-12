@@ -1,0 +1,13 @@
+{
+  "lockfileVersion": 1,
+  "workspaces": {
+    "": {
+      "dependencies": {
+        "tw-prose": "^0.0.10",
+      },
+    },
+  },
+  "packages": {
+    "tw-prose": ["tw-prose@0.0.10", "", {}, "sha512-nDmwLe2BO9agP90aaA6Fu7U3mNjmAGckgAzU6j1+n2cL+1afQnc5KW+cyIli0z97oRPDZr2wkUKHqHHyMeL9Pw=="],
+  }
+}

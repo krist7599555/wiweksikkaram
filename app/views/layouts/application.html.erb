@@ -23,7 +23,9 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="border-t-20 border-red-700">
+    <main class="max-w-[1000px] pt-20 px-5 mx-auto">
+      <%= yield %>
+    </main>
   </body>
 </html>
