@@ -1,21 +1,23 @@
 <div class="prose">
-  
+
   <h1>Welcome สถานปฏิบัติธรรมป่าวิเวกสิกขาราม อำเภอพล จังหวัดขอนแก่น!</h1>
   <ul>
     <li><%= link_to "linktr.ee", "https://linktr.ee/wiweksikkaram" %></li>
   </ul>
 
 
-  <h2>Latest Blog Posts</h2>
+  <h2>บทความล่าสุด 
+    <%= link_to "จาก Dek-D", "https://writer.dek-d.com/Wiweksikkaram/writer/view.php?id=2485901" %>
+  </h2>
   <ul>
     <% @posts.each do |post| %>
       <li>
-        <div style="display: flex; width: min(100%,800px)">
+        <div class="flex w-[min(100%,800px)]">
           <div>
             <%= post["number"] %>
             <%= link_to post["title"], post["link"] %>
           </div>
-          <div style="margin-left: auto">
+          <div class="ml-auto opacity-70 whitespace-nowrap">
             <%= post["date"] %>
             <% begin %>(<%= DateUtils.thai_date_from_now post["date"] %>)<% end %>
           </div>
