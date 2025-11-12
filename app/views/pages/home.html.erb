@@ -15,7 +15,7 @@
         <div class="flex w-[min(100%,800px)]">
           <div>
             <%= post["number"] %>
-            <%= link_to post["title"], post["link"] %>
+            <%= link_to post["title"], "/post/#{post["number"]}" %>
           </div>
           <div class="ml-auto opacity-70 whitespace-nowrap">
             <%= post["date"] %>
