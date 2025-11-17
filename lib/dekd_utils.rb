@@ -6,7 +6,7 @@ module DekdUtils
     url = "https://writer.dek-d.com/dekdee/writer/viewlongc.php?id=2485901&chapter=#{chapter}"
     response = HTTParty.get(url)
     # Check for a successful response (HTTP status 200)
-    return nil unless response.code == 200
+    raise Exception.new "Scape Error [#{response.code}] on (#{url})" unless response.code == 200
     # 2. Parse the HTML using Nokogiri
     doc = Nokogiri::HTML(response.body)
 
@@ -37,9 +37,9 @@ module DekdUtils
         .gsub("๱", "ญ")
         .gsub("๬", "จ")
       end.join,
-      book: doc.at_css(".chapter-box-wrapper .novel-name").text,
-      title: doc.at_css(".chapter-box-wrapper .chaptername").text,
-      date: doc.at_css(".chapter-box-wrapper .chapter-metainfo-wrapper").text
+      book: doc.at_css(".chapter-box-wrapper .novel-name")&.text,
+      title: doc.at_css(".chapter-box-wrapper .chaptername")&.text,
+      date: doc.at_css(".chapter-box-wrapper .chapter-metainfo-wrapper")&.text
     }
     out
   end
