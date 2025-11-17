@@ -43,6 +43,7 @@ module DekdUtils
       scrape_status: response.code,
       scrape_html: doc.to_html
     }
+    Rails.logger.debug(out.inspect)
     out
   end
 end
