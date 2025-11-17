@@ -39,7 +39,9 @@ module DekdUtils
       end.join,
       book: doc.at_css(".chapter-box-wrapper .novel-name")&.text,
       title: doc.at_css(".chapter-box-wrapper .chaptername")&.text,
-      date: doc.at_css(".chapter-box-wrapper .chapter-metainfo-wrapper")&.text
+      date: doc.at_css(".chapter-box-wrapper .chapter-metainfo-wrapper")&.text,
+      scrape_status: response.code,
+      scrape_html: doc.to_html
     }
     out
   end
