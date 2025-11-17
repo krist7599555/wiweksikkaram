@@ -1,13 +1,13 @@
 <div class="prose">
-
-  <div class="mb-4 text-sm">
-    <%= link_to "กลับหน้าหลัก", "/" %>
-  </div>
+  <div class="mb-4 text-sm"><%= link_to "กลับหน้าหลัก", "/" %></div>
 
   <h1><%= @post[:title] %></h1>
+
   <p><%= @post[:date] %></p>
-  
+
   <section class="space-y-8 prose mt-12">
     <%= @post[:content].html_safe %>
   </section>
+
+  <%= debug @post %>
 </div>
