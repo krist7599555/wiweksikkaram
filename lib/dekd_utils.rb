@@ -4,7 +4,17 @@ require "httparty"
 module DekdUtils
   def self.fetch_post(chapter)
     url = "https://writer.dek-d.com/dekdee/writer/viewlongc.php?id=2485901&chapter=#{chapter}"
-    response = HTTParty.get(url)
+    headers = {
+      "User-Agent" => "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36",
+      "Accept" => "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+      "Accept-Language" => "en-US,en;q=0.5",
+      "Accept-Encoding" => "gzip, deflate, br",
+      "Connection" => "keep-alive",
+      "Upgrade-Insecure-Requests" => "1",
+      "Cache-Control" => "max-age=0"
+    }
+
+    response = HTTParty.get(url, headers: headers)
     # Check for a successful response (HTTP status 200)
     raise Exception.new "Scape Error [#{response.code}] on (#{url})" unless response.code == 200
     # 2. Parse the HTML using Nokogiri
