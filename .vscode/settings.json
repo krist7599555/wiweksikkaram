@@ -1,0 +1,11 @@
+{
+  "emmet.includeLanguages": {
+    "erb": "html",
+    "html.erb": "html"
+  },
+  "files.associations": {
+    "*.html.erb": "erb",
+    "*.erb": "erb"
+  },
+  "rails.viewFileExtension": "json.jbuilder"
+}

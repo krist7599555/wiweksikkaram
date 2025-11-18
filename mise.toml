@@ -8,3 +8,6 @@ run = "bin/dev"
 
 [tasks.deploy]
 run = "kamal build push"
+
+[tasks.scrape]
+run = "ruby -C ./public/dekd scrape.rb"
